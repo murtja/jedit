@@ -1,4 +1,12 @@
-SOURCE CODE NOTES
+# Getting Started
+
+1. Install JDK 1.7 [Here is link i used](https://www.google.ca/search?q=jdk&oq=jdk&aqs=chrome..69i57.833j0j8&sourceid=chrome&ie=UTF-8)
+2. Install IntelliJ from [JetBrains](www.jetbrains.com)
+3. Open project in IntelliJ
+4. Install Ivyplugin by going to File > Settings > Plugins > Browser Repositories then search for: "IvyIDEA" and install it
+5. Try to run the project
+
+# SOURCE CODE NOTES
 
 This file only contains information about compiling from source.
 Scroll to the bottom if you are trying to use an IDE like Eclipse.
