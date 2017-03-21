@@ -376,7 +376,13 @@ public class BufferHistory
 				// I'm not sure when this can happen,
 				// but it does sometimes, witness the
 				// jEdit bug tracker.
-				continue;
+
+				// We should just swap the 2 numbers since perhaps other systems have start and end from large to small
+				// this make it more smarter instead of ignoring as done previously.
+
+				int temp = start;
+				start = end;
+				end = temp;
 			}
 
 			Selection sel;
