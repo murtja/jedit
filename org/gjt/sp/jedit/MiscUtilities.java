@@ -922,6 +922,19 @@ public class MiscUtilities
 		{
 			return false;
 		}
+
+		// If there is no encoding it could still be a text stream so we check the ratio of characters
+		try
+		{
+			if(isTextFile(detection.getRewindedStream())){
+				return false;
+			} // Otherwise we check for null characters and malformed data.
+		}
+		catch (Exception e)
+		{
+			// There is an error trying to do the test, so just ignore and do the next test
+		}
+
 		// Read the stream in system default encoding. The encoding
 		// might be wrong. But enough for binary detection.
 		try
@@ -1444,6 +1457,26 @@ loop:		for(;;)
 		else
 			return 0;
 	} //}}}
+
+	// http://stackoverflow.com/questions/620993/determining-binary-text-file-type-in-java
+	public static boolean isTextFile(InputStream in) throws Exception {
+		int size = in.available();
+		if(size > 1000)
+			size = 1000;
+		byte[] data = new byte[size];
+		in.read(data);
+		in.close();
+		String s = new String(data, "ISO-8859-1");
+		String s2 = s.replaceAll(
+				"[a-zA-Z0-9ßöäü\\.\\*!\"§\\$\\%&/()=\\?@~'#:,;\\"+
+						"+><\\|\\[\\]\\{\\}\\^°²³\\\\ \\n\\r\\t_\\-`´âêîô"+
+						"ÂÊÔÎáéíóàèìòÁÉÍÓÀÈÌÒ©‰¢£¥€±¿»«¼½¾™ª]", "");
+		// will delete all text signs
+
+		double d = (double)(s.length() - s2.length()) / (double)(s.length());
+		// percentage of text signs in the text
+		return d > 0.95;
+	}
 
 	//{{{ containsNullCharacter() method
 	private static boolean containsNullCharacter(Reader reader)
