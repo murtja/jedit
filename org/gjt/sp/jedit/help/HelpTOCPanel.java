@@ -224,7 +224,7 @@ public class HelpTOCPanel extends JPanel
 			}
 			else
 			{
-				Log.log(Log.ERROR,this,e);
+				Log.log(Log.ERROR,this, "TOC missing from "+path);
 			}
 		}
 		catch(IOException e)
