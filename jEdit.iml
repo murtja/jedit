@@ -2,7 +2,7 @@
 <module relativePaths="true" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="IvyIDEA" name="IvyIDEA">
-      <configuration ivyFile="C:\Users\100478903\Desktop\jEdit\ivy.xml" useProjectSettings="true" useCustomIvySettings="true" ivySettingsFile="" onlyResolveSelectedConfigs="false">
+      <configuration ivyFile="C:\Users\100478903\Desktop\software\jedit\ivy.xml" useProjectSettings="true" useCustomIvySettings="true" ivySettingsFile="" onlyResolveSelectedConfigs="false">
         <propertiesSettings>
           <propertiesFiles includeProjectLevelPropertiesFiles="true" />
         </propertiesSettings>
